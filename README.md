@@ -80,6 +80,7 @@ public static void main(String[] args) {
 <h4>Variables, data types and math operators</h4>
 
 <h6>Variables</h6>
+
 - Named data storage
 - Java is strongly typed:
     ```aidl
@@ -91,6 +92,47 @@ public static void main(String[] args) {
     - Use letters and numbers
     - First character not a number, always a letter
     - camelCase
+    
+<h6>Primitive Data Types</h6>
+
+- Built into the language
+- Foundation of all other types
+- Four categories:
+    - Integer
+    - Floating point
+    - Character
+    - Boolean
+- Integer types:
+    - Difference is in size of storage they take out
+    - Byte (eight bits)
+    - Short
+    - Int
+    - Long
+- Floating point types:
+    - Store values that have a fractional portion
+    - Float:
+    ```aidl
+    float milesInRiver = 135.2f;
+    ```
+    - Double
+- Character:
+    - stores a single Unicode character:
+    ```aidl
+    char myInitial = 'a';
+    char weirdU = '\u00DA';
+    ```
+- Boolean
+
+<h6>Primitive type storage</h6>
+
+- Primitive data types are stored by value
+- When you set one variable's value to another variable, it makes a <b>copy</b>
+
+<h6>Arithmetic Operations</h6>
+
+- Basic operators
+- Pre/postfix operators
+- Compound Assignment
     
     
     
