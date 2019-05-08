@@ -4,15 +4,18 @@ package com.andy.tutorial;
 public class Main {
 
     public static void main(String[] args) {
-        int numberA = 3;
-        int numberB = 6;
-        int numberC = 1;
-        int numberD = 4;
+        float students = 0.0f;
+        float rooms = 4.0f;
 
-        int result1 = numberA - numberB / numberC;
-        int result2 = (numberA - numberB) / numberC;
+        if (students > 0.0f) {
+            if (rooms > 0.0f) {
+                System.out.println(students / rooms);
+            }
+        } else {
+            System.out.println("No students");
+        }
 
-        System.out.println(result1);
-        System.out.println(result2);
+        System.out.println();
+        System.out.println("** end program **");
     }
 }

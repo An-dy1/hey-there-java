@@ -141,6 +141,42 @@ public static void main(String[] args) {
     - Mixed floating point sizes
     - Mixed integer and floating point type casts to longest floating point type
 - Explicit (widening or narrowing conversions)
+
+<h4>Conditional logic, looping and arrays</h4>
+
+<h6>Conditional logic</h6>
+
+Need:
+- Relational operators (like '>' and '==')
+- Conditional assignments:
+    ```aidl
+    result = condition ? true-value : false-value;  
+    ```
+- The if-else statement
+    ```aidl
+    if (condition) {
+      true-statement;
+    }
+    else if (condition2) {
+      other-true-statement;
+    }
+    else {
+      false-statement;
+    }
+    ```
+- Logical operators
+
+<h6>Block statement</h6>
+
+```aidl
+{
+    statement-1;
+    statement-2;
+    statement-3;
+    statement-4;
+}
+```
+
     
     
     
