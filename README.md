@@ -1,6 +1,7 @@
 <h3>My Java notes</h3>
 
 <h4>Intro</h4>
+
 - JDK: Java Development Kit
 - JRE: Java Runtime Environment
 - Java SE = Java Standard Edition
@@ -31,7 +32,29 @@ public static void main(String[] args) {
     java Main
     ```
     
-    
+- Statement Structure
+    - A program is made with statements
+    - Always ends with a semi-colon
+    - Parts of statement can be separated with white space(s)
+    - Example:
+    ```aidl
+    System.out.println("Hello, world");
+    System.out.println ( "Hello, world " );
+    ```
+
+- Comments:
+    - Line comments (ignore everything until new line):
+    ```aidl
+    // this is my comment
+    ```
+    - Block comments:
+    ```aidl
+    /* This is my block comment */
+    ```
+    - JavaDoc comments (JavaDoc utility uses these comments to generate documentation):
+    ```aidl
+    /** This is a javadoc comment */
+    ```
     
     
     
