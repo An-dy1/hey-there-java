@@ -56,6 +56,26 @@ public static void main(String[] args) {
     /** This is a javadoc comment */
     ```
     
+- Packages
+    ```aidl
+    package com.pluralsight.example;
+  
+    public class Main {
+      public static void main(Strings[] args) {
+    
+      }
+    }
+    ```
+    - Packages provide organization
+    - Follow a standard naming convention
+        - all lowercase
+        - Use reversed domain name to assure global uniqueness
+        - Add further qualifiers to assure uniqueness within organization
+    - Affect source code file structure
+        - Java requires no correlation between package names and source code file structure
+        - But most IDEs require a subfolder for each part of the package name
+    - Once you add in a package, the name of the main class changes to: com.pluralsight.example.Main
+    - To run, make sure you have new correct file name with extensions    
     
     
     
