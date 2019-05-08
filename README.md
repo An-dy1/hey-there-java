@@ -75,8 +75,22 @@ public static void main(String[] args) {
         - Java requires no correlation between package names and source code file structure
         - But most IDEs require a subfolder for each part of the package name
     - Once you add in a package, the name of the main class changes to: com.pluralsight.example.Main
-    - To run, make sure you have new correct file name with extensions    
+    - To run, make sure you have new correct file name with extensions
     
+<h4>Variables, data types and math operators</h4>
+
+<h6>Variables</h6>
+- Named data storage
+- Java is strongly typed:
+    ```aidl
+    int dataValue;
+    dataValue = 11;
+    int myNumber = 12;
+    ```    
+- To name variables:
+    - Use letters and numbers
+    - First character not a number, always a letter
+    - camelCase
     
     
     
