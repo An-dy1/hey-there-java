@@ -133,6 +133,14 @@ public static void main(String[] args) {
 - Basic operators
 - Pre/postfix operators
 - Compound Assignment
+
+<h6>Type conversions</h6>
+
+- Implicit (aka widening conversions)
+    - Mixed integer sizes
+    - Mixed floating point sizes
+    - Mixed integer and floating point type casts to longest floating point type
+- Explicit (widening or narrowing conversions)
     
     
     
