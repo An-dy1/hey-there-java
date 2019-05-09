@@ -244,6 +244,57 @@ for(int i = 0; i < myArray.length; i++) {
 
 int[] myNewArray = { 1, 2, 3}; // easier way to initialize an array
 ```
+
+<h6>For-each loop</h6>
+
+- Handles getting collection length
+- Handles accessing each value
+
+```aidl
+int[] myNumbers = {2, 4, 6, 8};
+int sum = 0;
+
+for(int currentNumber : myNumbers) {
+    sum += currentNumber;
+}
+```
+
+<h6>Switch!</h6>
+
+- Simplifies testing against multiple matches
+- Match can execute more than one statement
+
+```aidl
+switch(test-value) {
+    case value1:
+        statement;
+        break;
+    case value2:
+        statement;
+        break;
+    default:
+        statement;
+        break;
+}
+
+// for example::
+int myValue = 7;
+
+switch(myValue % 2) {
+    case 0:
+        System.out.print(myValue);
+        System.out.print(" is even");
+        break;
+    case 1:
+        System.out.print(myValue);
+        System.out.print(" is odd");
+        break;
+    default:
+        System.out.print("You won't get this far");
+        break;
+}
+```
+
     
     
     
