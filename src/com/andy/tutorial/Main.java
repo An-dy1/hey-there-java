@@ -4,15 +4,13 @@ package com.andy.tutorial;
 public class Main {
 
     public static void main(String[] args) {
-        float students = 0.0f;
-        float rooms = 4.0f;
+        int students = 130;
+        int rooms = 0;
 
-        if (students > 0.0f) {
-            if (rooms > 0.0f) {
-                System.out.println(students / rooms);
-            }
+        if (rooms > 0 && students/rooms > 30) {
+            System.out.println("Little crowded in here");
         } else {
-            System.out.println("No students");
+            System.out.println("Plenty of room");
         }
 
         System.out.println();

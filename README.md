@@ -177,6 +177,17 @@ Need:
 }
 ```
 
+<h6>Logical operators</h6>
+
+```aidl
+if (x == 1 & y == 2) // and - true & true
+if (x == 1 | y == 2) // or - true or true
+if (x == 1 ^ y == 2) // exclusive or - only one true
+if (!x == 1) // negation
+if (x == 1 && y == 2) // conditional and - only evaluates y if x is true
+if (x == 1 || y == 2) // conditional or - only evaluates y if x is false
+```
+
     
     
     
