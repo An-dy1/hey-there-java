@@ -188,7 +188,62 @@ if (x == 1 && y == 2) // conditional and - only evaluates y if x is true
 if (x == 1 || y == 2) // conditional or - only evaluates y if x is false
 ```
 
+<h6>Example while loop</h6>
+
+```aidl
+int startingValue = 5;
+int factorial = 1;
+
+while(startingValue > 1) {
+    factorial *= startingValue;
+    startingValue -= 1;
+}
+```
+
+<h6>Do while loop</h6>
+
+- Condition is checked at the end of the loop
+- Body of the statement is executed at least once
+
+```aidl
+int initialValue = 5;
+do {
+    System.out.print(initialValue);
+    System.out.print(" * 2 = ");
+    initialValue *= 2;
+    System.out.print(initialValue);
+}
+while (initialValue <= 100);
+```
     
+<h6>For loop</h6>
+
+- Condition checked at start of loop
+- Basic structure:
+
+```aidl
+for(initialize; condition; update) { 
+    statement;
+}
+for(int firstNumber = 1; firstNumber < 100; firstNumber += 2) {
+    do a thing;
+}
+```
+
+<h6>Arrays</h6>
+
+- Store multiple values of a common type under a single name
+
+```aidl
+int[] myArray = new int[5]; // make an array with 5 spaces
+int sum;
+myArray[0] = 11;
+for(int i = 0; i < myArray.length; i++) {
+    sum += myArray[i];
+}
+
+int[] myNewArray = { 1, 2, 3}; // easier way to initialize an array
+```
     
     
     
