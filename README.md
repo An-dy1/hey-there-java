@@ -307,21 +307,34 @@ switch(myValue % 2) {
 - A template for creating an object, like so:
 
 ```aidl
-class Bike {
-    String bikeType; // field storing state
-    float price; // field storing another state
+public class Bike { // public means you can access this class from anywhere
+    private String bikeType; // field storing state; private means they're accessible within the class (constructor and methods), but can no longer print out the values from outside the class
+    private float price; // field storing another state
     
-    Bike() {
+    public Bike() { // make the constructor public too
         bikeType = 'mountain bike';
-        price = 2400.00;
+        price = 2000.00;
     } // constructor
     
-    void addMoreCost() {
-        if(price < 2000.00) {
+    public void addMoreCost() {
+        if(price <= 2000.00) {
             price += 400.00;
+        } else {
+            wayTooPricey();
         }
     } // executable code - a method - void means there is no return, just manipulates state
+    
+    private void wayTooPricey() {
+        System.out.println("You can't afford that shit");
+    }
 }
+
+
+Bike foxyCleopatra;
+foxyCleopatra = new Bike(); // create an instance of my class
+
+foxyCleopatra.addMoreCost(); // call a method on my new instance of the class
+
 ```
 
 - Java source file name normally has same name as class
@@ -329,7 +342,28 @@ class Bike {
 - <b>Fields</b> store object state
 - <b>Methods</b> are executable code that manipulates state and performs operations
 - <b>Constructor</b> executable code used during object creation to set initial state
+- Classes are reference types, meaning when assigned they point to an object, rather than creating a whole new copy 
 
+<h6>Encapsulation and access modifiers</h6>
+
+- Focus on what not how
+- User shouldn't need to know how something is built to be able to use it
+- Concept is: <b>encapsulation</b> 
+- In Java, achieved through using <b>access modifiers</b>
+- Examples:
+```aidl
+no access modifier - only accessible within its own package
+public - accessible everywhere
+private - only accessible within the class where it's declared
+
+// access public Bike class from above:
+
+Bike Franky = new Bike();
+Franky.addMoreCost(); // allowed
+Franky.wayTooPricey(); // not allowed - private method
+```
+
+- IMPORTANT: public classes must be within a source file of the same name. public class Bike must be found within Bike.java
     
     
     
