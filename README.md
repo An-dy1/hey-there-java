@@ -439,3 +439,31 @@ Three ways:
     - Represents an uncreated object
     - Can be assigned to any reference variable
     - Useful because local variables cannot be uninitialized
+    
+<h6>Field encapsulation</h6>
+
+- In most cases a class' field should not be directly accessible outside of the class
+- Helps hide implementation details
+- Use methods to control field access
+- Accessor/Mutator pattern:
+    ```
+    public class Flight {
+    
+        private int passengers;
+        private int seats;
+        
+        // accessor, aka GETTER to retrieve a field value:
+        public int getSeats() {
+            return seats;
+        }
+        
+        // mutator, aka SETTER to modify a field value
+        public void setSeats(int seats) {
+            this.seats = seats;
+        }
+    }
+    
+    Flight kcToNyc = new Flight();
+    kcToNyc.setSeats(75);
+    System.out.printlin(kcToNyc.getSeats()); // returns 75
+    ```

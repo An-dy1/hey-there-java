@@ -3,10 +3,23 @@ package com.andy.tutorial;
 public class MathEquation {
 
     // create fields for each value we need to keep track of:
-    public int leftHandNumber;
-    public int rightHandNumber;
-    public char mathOperator;
-    public int result;
+    private int leftHandNumber;
+    private int rightHandNumber;
+    private char mathOperator;
+    private int result;
+
+    // GETTERS and SETTERS:
+    public int getLeftHandNumber() { return leftHandNumber;}
+    public void setLeftHandNumber(int leftHandNumber) { this.leftHandNumber = leftHandNumber;}
+
+    public int getRightHandNumber() { return rightHandNumber;}
+    public void setRightHandNumber(int rightHandNumber) { this.rightHandNumber = rightHandNumber;}
+
+    public int getMathOperator() { return mathOperator;}
+    public void setMathOperator(char mathOperator) { this.mathOperator = mathOperator;}
+
+    // don't want common ability to set result, just retrieve it
+    public int getResult() { return result; }
 
     // method abstracted out from main file
     public void executeEquation() {

@@ -17,15 +17,15 @@ public class Main {
 
         for (MathEquation equation: equations) {
             equation.executeEquation();
-            System.out.println(equation.result);
+            System.out.println(equation.getResult());
         }
     }
 
     public static MathEquation createMathEquationInstance(int leftHandNumber, int rightHandNumber, char mathOperator) {
         MathEquation equation = new MathEquation();
-        equation.leftHandNumber = leftHandNumber;
-        equation.rightHandNumber = rightHandNumber;
-        equation.mathOperator = mathOperator;
+        equation.setLeftHandNumber(leftHandNumber);
+        equation.setRightHandNumber(rightHandNumber);
+        equation.setMathOperator(mathOperator);
         return equation;
     }
 }
