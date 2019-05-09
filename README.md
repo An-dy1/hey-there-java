@@ -295,6 +295,41 @@ switch(myValue % 2) {
 }
 ```
 
+<h4>All about classes</h4>
+
+- Java is object-oriented
+- Encapsulates data, operations and usage semantics
+- Objects let you separate "what" is done from "how" it's done
+- Classes give a structure for <b>describing and creating objects</b>
+
+<h6>Classes</h6>
+
+- A template for creating an object, like so:
+
+```aidl
+class Bike {
+    String bikeType; // field storing state
+    float price; // field storing another state
+    
+    Bike() {
+        bikeType = 'mountain bike';
+        price = 2400.00;
+    } // constructor
+    
+    void addMoreCost() {
+        if(price < 2000.00) {
+            price += 400.00;
+        }
+    } // executable code - a method - void means there is no return, just manipulates state
+}
+```
+
+- Java source file name normally has same name as class
+- Made up of both state and executable code
+- <b>Fields</b> store object state
+- <b>Methods</b> are executable code that manipulates state and performs operations
+- <b>Constructor</b> executable code used during object creation to set initial state
+
     
     
     
