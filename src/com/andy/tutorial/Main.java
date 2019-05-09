@@ -4,32 +4,34 @@ package com.andy.tutorial;
 public class Main {
 
     public static void main(String[] args) {
-        int value1 = 100;
-        int value2 = 0;
-        int result;
-        char opCode = 'd';
+        int[] leftHandValues = {3, 5, 7, 9};
+        int[] rightHandValues = {2, 4, 0, 8};
+        char[] mathOperators = {'a', 's', 'm', 'd'};
+        int[] results = new int[mathOperators.length];
 
-        if (opCode == 'a') {
-            result = value1 + value2;
-        } else if (opCode == 's') {
-            result = value1 - value2;
-        } else if (opCode == 'd') {
-            if (value2 != 0) {
-                result = value1 / value2;
-            } else {
-                result = 0;
-                System.out.println("Can't divide by 0 my friend");
+        for (int i = 0; i < mathOperators.length; i++) {
+            switch (mathOperators[i]) {
+                case 'a':
+                    results[i] = leftHandValues[i] + rightHandValues[i];
+                    break;
+                case 's':
+                    results[i] = leftHandValues[i] - rightHandValues[i];
+                    break;
+                case 'd':
+                    results[i] = rightHandValues[i] != 0 ? leftHandValues[i] / rightHandValues[i] : 0;
+                    break;
+                case 'm':
+                    results[i] = leftHandValues[i] * rightHandValues[i];
+                    break;
+                default:
+                    System.out.println("Ooh, you messed it up now");
+                    results[i] = 0;
+                    break;
             }
-            /* Alternative:
-            * result = value2 != 0 ? value1/value2 : 0;
-            * */
-        } else if (opCode == 'm') {
-            result = value1 * value2;
-        } else {
-            System.out.println("Error - invalid opCode");
-            result = 0;
-        }
 
-        System.out.println(result);
+            for (int theResult : results) {
+                System.out.println(theResult);
+            }
+        }
     }
 }
