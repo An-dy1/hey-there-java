@@ -4,16 +4,23 @@ package com.andy.tutorial;
 public class Main {
 
     public static void main(String[] args) {
-        int students = 130;
-        int rooms = 0;
+        int value1 = 100;
+        int value2 = 22;
+        int result;
+        char opCode = 'm';
 
-        if (rooms > 0 && students/rooms > 30) {
-            System.out.println("Little crowded in here");
+        if (opCode == 'a') {
+            result = value1 + value2;
+        } else if (opCode == 's') {
+            result = value1 - value2;
+        } else if (opCode == 'd') {
+            result = value1 / value2;
+        } else if (opCode == 'm') {
+            result = value1 * value2;
         } else {
-            System.out.println("Plenty of room");
+            result = 0;
         }
 
-        System.out.println();
-        System.out.println("** end program **");
+        System.out.println(result);
     }
 }
