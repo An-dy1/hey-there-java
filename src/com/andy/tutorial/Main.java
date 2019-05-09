@@ -4,34 +4,28 @@ package com.andy.tutorial;
 public class Main {
 
     public static void main(String[] args) {
-        int[] leftHandValues = {3, 5, 7, 9};
-        int[] rightHandValues = {2, 4, 0, 8};
-        char[] mathOperators = {'a', 's', 'm', 'd'};
-        int[] results = new int[mathOperators.length];
+//        int[] leftHandValues = {3, 5, 7, 9};
+//        int[] rightHandValues = {2, 4, 0, 8};
+//        char[] mathOperators = {'a', 's', 'm', 'd'};
+//        int[] results = new int[mathOperators.length];
 
-        for (int i = 0; i < mathOperators.length; i++) {
-            switch (mathOperators[i]) {
-                case 'a':
-                    results[i] = leftHandValues[i] + rightHandValues[i];
-                    break;
-                case 's':
-                    results[i] = leftHandValues[i] - rightHandValues[i];
-                    break;
-                case 'd':
-                    results[i] = rightHandValues[i] != 0 ? leftHandValues[i] / rightHandValues[i] : 0;
-                    break;
-                case 'm':
-                    results[i] = leftHandValues[i] * rightHandValues[i];
-                    break;
-                default:
-                    System.out.println("Ooh, you messed it up now");
-                    results[i] = 0;
-                    break;
-            }
+        MathEquation[] equations = new MathEquation[4];
+        equations[0] = createMathEquationInstance(3, 2, 'a');
+        equations[1] = createMathEquationInstance(5, 4, 's');
+        equations[2] = createMathEquationInstance(7, 0, 'm');
+        equations[3] = createMathEquationInstance(9, 8, 'd');
 
-            for (int theResult : results) {
-                System.out.println(theResult);
-            }
+        for (MathEquation equation: equations) {
+            equation.executeEquation();
+            System.out.println(equation.result);
         }
+    }
+
+    public static MathEquation createMathEquationInstance(int leftHandNumber, int rightHandNumber, char mathOperator) {
+        MathEquation equation = new MathEquation();
+        equation.leftHandNumber = leftHandNumber;
+        equation.rightHandNumber = rightHandNumber;
+        equation.mathOperator = mathOperator;
+        return equation;
     }
 }

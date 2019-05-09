@@ -327,6 +327,16 @@ public class Bike { // public means you can access this class from anywhere
     private void wayTooPricey() {
         System.out.println("You can't afford that shit");
     }
+    
+    // method that returns a boolean:
+    public boolean isRad(amountOfTravel) {
+        int amountOfTravel;
+        if amountOfTravel > 130mm {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 
@@ -364,6 +374,68 @@ Franky.wayTooPricey(); // not allowed - private method
 ```
 
 - IMPORTANT: public classes must be within a source file of the same name. public class Bike must be found within Bike.java
+   
+<h6>Naming classes</h6>
+
+- Use only letters and numbers
+- First character always a letter
+- Pascal case: class SexyBike { /* */ }
+- Simple, descriptive nouns
+- Avoid abbreviations 
     
+<h6>Method basics</h6>   
+
+- Executable code that manipulates state and performs operations 
+- Name:
+    - Same conventions as variables
+    - Should be a verb or action
+- Return type:
+    - There is always one in Java
+- Parameters
+    - Can be empty
+- Body
+    - Enclosed in brackets
     
+```
+public class MethodExampleClass {
+
+    public void addTripDays(int firstAmount, int secondAmount, int Count) {
+        if(count < 1){
+            return; // check parameters before doing unnecessary work
+        }
+        int total = firstAmount + secondAmount;
+        for(int i = 0; i < count; i++) {
+            System.out.println(sum);
+        }   
+    }
+}
+
+/* pretend this is outside the class: */
+
+MethodExampleClass practice = new MethodExampleClass();
+practice.addTripDays(3, 8, 3);
+```
+
+<h6>Exiting from a method</h6>
+
+Three ways:
+1. End of the method is reached
+2. A return statement is encountered
+3. An error occurs
+
+<h6>Method return values</h6>
+
+- Returns a single value; can be:
+    - A primitive value
+    - A reference to an object
+    - A reference to an array
     
+<h6>This and Null references</h6>
+
+- <b>This</b> is: an implicit reference to the current object
+    - Reduces ambiguity
+    - Allows an object to pass itself as a parameter
+- <b>Null</b> is: a reference literal
+    - Represents an uncreated object
+    - Can be assigned to any reference variable
+    - Useful because local variables cannot be uninitialized
