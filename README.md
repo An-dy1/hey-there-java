@@ -467,3 +467,8 @@ Three ways:
     kcToNyc.setSeats(75);
     System.out.printlin(kcToNyc.getSeats()); // returns 75
     ```
+    
+<h4>Class initializers and constructors</h4>
+
+<h4>To learn more about:</h4>
+- Getters and setters
