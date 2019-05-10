@@ -470,5 +470,127 @@ Three ways:
     
 <h4>Class initializers and constructors</h4>
 
+- Establishing initial state of objects
+- Field initializers
+- Constructors
+- Constructor chaining and visibility
+- Initialization blocks
+- Initialization and construction order
+
+<h6>Establishing initial state</h6>
+
+- Objects are made of: state (fields?) and executable code
+- Java provides a default state when the field is first created
+- 3 ways to set initial state:
+    1. Field initializers (assign specific value to field)
+    2. Constructors (pass in parameters and run code to set state)
+    3. Initialization blocks (can be shared across constructors)
+    
+- Field initial value:
+    - Unlike variables, don't have to have explicit value assigned to them
+    - Java default will always be field's '0' value
+    - Or, you can specify initial value as part of declaration:
+    ```
+    public class Earth {
+        int circumferenceInMiles = 24901; // instantiating earth class, this field will have this value
+        int circumferenceInKilometers = 24901 * 1.6; // can also be an equation, just has to be valid
+        int circumferenceInKilometers = circumferenceInMiles * 1.6; // better 
+        int circumferenceInKilometers = Math.round(circumferenceInMiles * 1.6); // can also use a method call
+    }
+    ```
+    
+<h6>Constructor(again)</h6>
+
+- Executable code used during object creation to set initial state:
+
+```
+public class Bike {
+    private float price;
+    private String radLevel;
+    
+    // this is the constructor
+    public Bike() {
+        price = 2400.00;
+        radLevel = 6;
+    }
+}
+```
+
+- It is executable code but NOT A METHOD; there is no return value
+- Every class has at least one constructor
+- So, what happens when you don't need an explicit constructor?
+```
+public class bikeRider {
+    private int numberOfBikes;
+    private int coolFactor;
+    
+    // assume getters and mutators here 
+    
+    private float coolnessRatio; 
+    
+    // create a bikeRider with coolFactor set
+    public bikeRider(int coolFactor) {
+        this.coolFactor = coolFactor;
+    }
+}
+
+bikeRider andyJay = new bikeRider(); // this code will run if there is no explicit constructor, won't run if there is a constructor like above^
+
+bikeRider sammyDee = new bikeRider(4); // passing in coolFactor to the constructor above
+sammyDee.setNumberOfBikes(2);
+```
+
+- Java just generates a constructor that doesn't do anything
+
+<h6>Chaining constructors</h6>
+```
+public class bikeRider {
+    private int numberOfBikes;
+    private int coolFactor;
+    private float coolnessRatio; 
+    
+    // assume getters and mutators here 
+    
+    // constructor that takes no arguments
+    public bikeRider() {
+    }
+    
+    // constructor with coolFactor argument
+    public bikeRider(int coolFactor) {
+        this(coolnessRatio > 0.5 ? 100.00 : 0.00); // exercise doesn't quite translate, but this is now calling the last constructor below:
+        this.coolFactor = coolFactor;
+    }
+    
+    // constructor with two arguments
+    public bikeRider (int coolFactor, int numberOfBikes) {
+        // this works, but it's repeating code
+        this.coolFactor = coolFactor;
+        this.numberOfBikes = numberOfBikes;
+        
+        // better way: call a constructor within this constructor:
+        this(coolFactor); // ^calling constructor above; must be first line;
+        this.numberOfBikes = numberOfBikes;
+    }
+    
+    // introduce a constructor allowing us to calculate coolnessRatio:
+    private bikeRider(float coolnessRatio) {
+        this.coolnessRatio = coolnessRatio;
+    }
+}
+
+```
+- With multiple constructors, should start thinking about visibility of the constructors
+
 <h4>To learn more about:</h4>
-- Getters and setters
+- Getters and setters and when they're used
+- Using public vs private
+
+<h4>Basic, important points</h4>
+
+- public and private (visibility) are like global vs local?
+- Objects have: state (fields) and executable code (methods)
+- What is this syntax: ```MathEquation equation: equations```
+- 3 ways to set initial state:
+    1. Field initializers (assign specific value to field)
+    2. Constructors (pass in parameters and run code to set state)
+    3. Initialization blocks (can be shared across constructors)

@@ -5,7 +5,7 @@ public class MathEquation {
     // create fields for each value we need to keep track of:
     private int leftHandNumber;
     private int rightHandNumber;
-    private char mathOperator;
+    private char mathOperator = 'a' ;
     private int result;
 
     // GETTERS and SETTERS:
@@ -20,6 +20,21 @@ public class MathEquation {
 
     // don't want common ability to set result, just retrieve it
     public int getResult() { return result; }
+
+    // write a constructor that takes no arguments
+    public MathEquation() {}
+
+    // write a constructor with just a mathOperator passed to it
+    public MathEquation(char mathOperator){
+        this.mathOperator = mathOperator;
+    }
+
+    // write a constructor with a mathOperator and both values
+    public MathEquation(int leftHandNumber, int rightHandNumber, char mathOperator) {
+        this(mathOperator); // call up
+        this.leftHandNumber = leftHandNumber;
+        this.rightHandNumber = rightHandNumber;
+    }
 
     // method abstracted out from main file
     public void executeEquation() {
