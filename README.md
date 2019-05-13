@@ -709,6 +709,115 @@ public void addPassengers(Passenger... list) { }
 
 <h4>Class inheritance</h4>
 
+- A class can be declared to inherit from another class
+- Use "extends" keyword
+- Derived class has characteristics of base class, but can add capabilities
+- Derived class instances can be assigned to base class typed references
+
+```
+public class CargoFlight extends Flight {
+    float maxCargoSpace = 1000.0f;
+    float usedCargoSpace;
+    
+    public void addOnePackage(float h, float w, float d) {
+        double size = h * w * d;
+        if(hasCargoSpace(size)) {
+            usedCargoSpace += size;
+        } else {
+            handleNoSpace();
+        }
+    }
+    
+    private boolean hasCargoSpace(float size) {
+        return usedCargoSpace + size <= maxCargoSpace;
+    }
+    
+    private void handleNoSpace() {
+        System.out.println("Not enough space);
+    }
+}
+```
+
+- If derived class adds a field with same name as a field in the base class, it will hide the base class field
+- Methods override base class methods with same signature
+
+<h6>Object class</h6>
+
+- Object class is built-in to Java
+- It is the root of the Java class hierarchy
+- Every class has the characteristics of the Object class
+- Useful for declaring variables, fields and paramenters that can reference any class or array instance
+- Defines a number of methods that are inherited by all objects
+- Built-in methods include: clone; instanceof(?), hashCode, getClass (returns type info), finalize (resource cleanup), toString (return a string), equals (compare one object instance to another)
+
+<h6>Equality</h6>
+
+- What does it mean for two object instances to be equal?
+- Using == only resolves to true if two reference types are pointing to the same object
+- .equals also performs a reference equals test
+
+```
+class Flight {
+private int flightNumber;
+private char flightClass;
+
+@Override // this annotation checks we have equals signature correct
+public boolean equals(Object o) {
+
+    if(!(o instanceof Flight)) {
+        return false;
+    } else {
+        Flight other = (Flight) o; // cast o to Flight and put it in reference of class Flight
+            return {
+                flightNumber == other.flightNumber && flightClass == other.flightClass;
+            }
+    }
+  
+}
+
+Flight f1 = new Flight(175);
+Flight f2 = new Flight(175);
+
+if(f1.equals(f2)); // passes f2 into parameter o
+
+Passenger p = new Passenger() {
+    if(f1.equals(p)); // 
+}
+
+}
+```
+
+<h6>Special reference: Super</h6>
+
+- like <em>this</em>, super is an implicit reference to current object
+- but super treats the object as if it's an instance of its base class
+- Useful for accessing base class members that have been overridden:
+
+```
+@Override
+public boolean equals(Object o) {
+    if(super.equals(o))
+        return true;
+    // more stuff here
+}
+```
+
+<h6>Control inheritance and overriding</h6>
+
+- Use <em>final</em>
+
+```
+public final class Passenger { } // can no longer extend this class
+```
+
+<h6>Inheritance and constructors</h6>
+
+- Constructors are not inherited
+- A base class constructor must always be called
+- Call doesn't have to be explicit - default is class' no-argument constructor
+
+---
+
 <h4>To learn more about:</h4>
 - Getters and setters and when they're used
 - Using public vs private

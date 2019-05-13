@@ -50,6 +50,24 @@ public class Main {
 
         System.out.println("result = ");
         System.out.println(equationOverload.getResult());
+
+        System.out.println();
+        System.out.println("Using inheritance now:");
+        System.out.println();
+
+        // make an array of Calculate Bases along and then set their values
+        CalculateBase[] calculators = {
+          new Divider(100, 50),
+          new Adder(3, 4),
+          new Subtractor(6, 7),
+          new Multiplier(3, 7)
+        };
+
+        for(CalculateBase calculator:calculators) {
+            calculator.calculate();
+            System.out.println("result = ");
+            System.out.println(calculator.getResult());
+        }
     }
 
     // this is a create method
