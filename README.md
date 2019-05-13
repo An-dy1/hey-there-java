@@ -581,6 +581,15 @@ public class bikeRider {
 ```
 - With multiple constructors, should start thinking about visibility of the constructors
 
+<h6>Initialization blocks</h6>
+
+- Shared across all constructors
+- Executed as if the code were placed at the start of each constructor
+- Wrap in brackets outside of any method or constructor; they are executed in order if there are multiple
+
+<h6>Initialization and construction order</h6>
+
+
 <h4>To learn more about:</h4>
 - Getters and setters and when they're used
 - Using public vs private
