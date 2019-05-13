@@ -705,7 +705,9 @@ private boolean hasCarryOnSpace(int carryOns) {
 ```
 public void addPassengers(Passenger... list) { }
 ```
-___
+
+<h4>Class inheritance</h4>
+
 <h4>To learn more about:</h4>
 - Getters and setters and when they're used
 - Using public vs private
