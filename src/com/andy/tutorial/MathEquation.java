@@ -36,7 +36,14 @@ public class MathEquation {
         this.rightHandNumber = rightHandNumber;
     }
 
-    // method abstracted out from main file
+    // overload the executeEquation method below:
+    public void executeEquation(int leftHandNumber, int rightHandNumber) {
+        this.setLeftHandNumber(leftHandNumber);
+        this.setRightHandNumber(rightHandNumber);
+        executeEquation();
+    }
+
+    // this method abstracted out from main file
     public void executeEquation() {
         switch (mathOperator) {
             case 'a':

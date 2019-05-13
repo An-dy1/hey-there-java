@@ -36,6 +36,20 @@ public class Main {
             equation.executeEquation();
             System.out.println(equation.getResult());
         }
+
+        // print statement to checkout out overloads
+        System.out.println();
+        System.out.println("Using overloads now");
+        System.out.println();
+
+        int leftNumber = 9;
+        int rightNumber = 4;
+
+        MathEquation equationOverload = new MathEquation('d');
+        equationOverload.executeEquation(leftNumber, rightNumber);
+
+        System.out.println("result = ");
+        System.out.println(equationOverload.getResult());
     }
 
     // this is a create method

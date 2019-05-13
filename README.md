@@ -589,7 +589,123 @@ public class bikeRider {
 
 <h6>Initialization and construction order</h6>
 
+![order of initializing objects](./images/initializing-objects.png)
 
+<h4>More on parameters</h4>
+
+Overview:
+- Parameter immutability
+- Constructor and method overloading
+- Variable number of parameters
+
+<h6>Parameter immutability</h6>
+
+- Parameters are passed by making a copy of the value (passed by value)
+- Thus, changes made to parameter inside method are not visible outside method
+
+```
+int value1 = 10;
+int value2 = 15;
+
+swap(value1, value2); // 10 copied into i; 15 copied into j
+
+void swap(int i, int j) {
+    int k = i;
+    i = j;
+    j = k;
+    // print i and j will print 20 and 10; but value1 and value2 haven't changed
+    // same happens with classes, only you change references to values within a class rather than the values themselves
+}
+```
+
+- IMPORTANT: Though we can't change parameters themselves, when we pass in classes, changes to members of the class are visible outside the method
+```
+Flight numberUno = new Flight(10);
+Flight numberDos = new Flight(15);
+// print numberUno and numberDos flight numbers 
+swapFlightNumbers(numberUno, numberDos);
+
+// method to switch flight numbers
+void swapFlightNumbers(Flight i, Flight j) {
+    int placeholder = i.getFlightNumber(); // takes reference held by i, goes to the object reference it points to, retrieves 10 and puts that in placeholder
+    i.setFlightNumber(j.getFlightNumber()); // didn't change parameter, changed the object it is pointing to
+    j.setFlightNumber(k);
+}
+
+```
+
+<h6>Overloading</h6>
+
+- A class may have multiple versions of constructor or method
+- Passed different parameters
+- Just needs some way to identify the difference: signature
+- 3 parts:
+    - Number of parameters
+    - Type of each parameter
+    - Name (doesn't matter as much with constructors, which always match class name; relevant with methods)
+
+```
+public class Flight {
+
+int seats = 150, passengers;
+int maxCarryOns = seats * 2, totalCarryOns;
+
+public void addOnePassenger() {
+    if(passengers < seats) {
+        passengers += 1;
+    } else {
+        handleTooMany();
+    }
+}
+
+// overload the addOnePassenger method:
+public void addOnePassenger(int bags) {
+    if(hasSeating()) {
+        addOnePassenger();
+        totalCheckedBas += bags;
+    } // no rules about order of overloading methods
+} // this adds functionality
+
+// overload it again:
+public void addOnePassenger(Passenger p) {
+    addOnePassenger(p.getCheckBags());
+} // this is a convenience overload
+
+// overload it again:
+public void addOnePassenger(int bags, int carryOns {
+    if(hasSeatin()) {
+        addOnePassenger(bags());
+        totalCarryOns += carryOns;
+    }
+}
+
+// overload it again    
+public void addOnePassenger(Passenger p, int carryOns) {
+    addOnePassenger(p.getCheckedBags(), carryOns);
+}
+
+private boolean hasSeating() {
+    return passengers < seats;
+}
+
+private boolean hasCarryOnSpace(int carryOns) {
+    return totalCarryOns + carryOns <= maxCarryOns;
+}
+
+
+}
+```
+
+<h6>Variable number of parameters</h6>
+
+- Methods can be declared to accept a varying number of parameter values
+- Put elipses after parameter type:
+- Can only be used on the last parameter
+
+```
+public void addPassengers(Passenger... list) { }
+```
+___
 <h4>To learn more about:</h4>
 - Getters and setters and when they're used
 - Using public vs private
