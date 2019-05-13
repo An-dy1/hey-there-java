@@ -543,6 +543,7 @@ sammyDee.setNumberOfBikes(2);
 - Java just generates a constructor that doesn't do anything
 
 <h6>Chaining constructors</h6>
+
 ```
 public class bikeRider {
     private int numberOfBikes;

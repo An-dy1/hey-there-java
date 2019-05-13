@@ -42,8 +42,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="145">
-                <caret line="709" selection-start-line="709" selection-end-line="709" />
+              <first_editor relative-caret-position="200">
+                <caret line="545" selection-start-line="545" selection-end-line="545" />
               </first_editor>
               <second_editor />
             </state>
@@ -58,6 +58,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>chaining</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,12 +159,12 @@
       <updated>1557324037039</updated>
       <workItem from="1557324038349" duration="25327000" />
       <workItem from="1557756575621" duration="49000" />
-      <workItem from="1557758308840" duration="3503000" />
+      <workItem from="1557758308840" duration="3548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28879000" />
+    <option name="totallyTimeSpent" value="28924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1472" y="23" width="1843" height="1009" extended-state="0" />
@@ -174,12 +179,12 @@
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3293348" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3293348" />
@@ -224,8 +229,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="145">
-            <caret line="709" selection-start-line="709" selection-end-line="709" />
+          <first_editor relative-caret-position="200">
+            <caret line="545" selection-start-line="545" selection-end-line="545" />
           </first_editor>
           <second_editor />
         </state>
