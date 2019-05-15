@@ -816,6 +816,112 @@ public final class Passenger { } // can no longer extend this class
 - A base class constructor must always be called
 - Call doesn't have to be explicit - default is class' no-argument constructor
 
+<h4>More on data types</h4>
+
+<h6>String class</h6>
+
+- Literal strings are enclosed in DOUBLE quotes
+- Plus symbol to concatenate
+- String objects are immutable, changes require making a copy
+- Methods include:
+    - Length
+    - valueOf
+    - concat
+    - replace
+    - toupper/lowercase
+    - trim
+    - split
+    - format
+    - charAt
+    - contains, endswith
+    - compareTo
+    - equals - compares character by character
+    - intern - assigns same reference to same characters
+    
+<h6>String builder</h6>
+
+- Provides mutable string buffer
+- For best performance, allocate size
+
+```
+StringBuilder myStringBuilder = new StringBuilder(40);
+String myName = "Andrea";
+myStringBuilder.append("My name is ");
+myStringBuilder.append(myName);
+```
+
+<h4>Error handling with exceptions</h4>
+
+- Exceptions are non-intrusive ways to signal errors
+- try-catch-finally statements (finally is a cleanup block; runs after try or after catch)
+
+```
+int i = 12;
+int j = 2;
+
+try {
+    int result = i / (j-2);
+    System.out.println(result);
+} catch(Exception e) { // e receives a reference to the exception that describes which error occurred
+    System.out.println("Error " + e.getMessage());
+    e.printStackTrace(); // this would have crashed without the catch statement
+}
+```
+
+<h6>Exceptions are objects</h6>
+
+- Exception types are described with a class
+- So, root class is Object class
+- Inherits throwable and error (linkage error)
+- Inherits throwable and Exception (runtime exception, null pointer exception) - more often program errors
+- Exceptions can be handled by type
+
+<h4>PACKAGES!</h4>
+
+The overview:
+- What is it?
+- Packages as a namespace
+- Importing packages
+- Limiting access to package contents
+- Distributing packages and archive files - JARs!
+
+<h6>What is it</h6>
+
+- A group of related types
+- Create a namespace - avoid type naming collisions
+- Provide an access boundary
+- Act as a unit of distribution
+
+<h6>Declaring packages</h6>
+
+- Each source file identifies associate package using ```package``` keyword
+- Must appear before any type declarations
+- Applies to all types within the source file after declared
+
+<h6>Create a namespace</h6>
+
+- Package name becomes part of the type name
+
+<h6>Determining a type's package</h6>
+
+- Compiler needs to know each type's package
+- Doing it explicitly is cumbersome
+- Java allows use of a type's simple name in code
+- Types within a package don't need to be qualified
+- Java.lang packages don't need to be qualified 
+- Use type imports
+    - Can do a single type import
+    ``` import com.andy.tutorial.Pluralsight```
+    - Import on demand (a whole package)
+    
+<h6>Access boundaries</h6>
+
+- "package private"
+- Public functionality with private house-keeping you don't want used outside the package
+- Can apply to a type (class)
+- Can apply to type members (class members)
+- public, private, and protected
+
 ---
 
 <h4>To learn more about:</h4>
