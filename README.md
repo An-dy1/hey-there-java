@@ -922,11 +922,56 @@ The overview:
 - Can apply to type members (class members)
 - public, private, and protected
 
+<h6>Unit of distribution</h6>
+
+- Classes get organized in hierarchical folders reflecting package name
+- COM files are adequate
+- Archive files let us put the folder structure in a JAR file
+- File can optionally be compressed
+- AND optionally include a manifest (can identify startup class)
+- To create:
+    - jar command-line utility
+    - via IntelliJ
+    - Build automation systems like Maven
+    
+<h4>Creating abstract relationships with interfaces</h4>
+
+Overview:
+- What even are interfaces
+- Implementing an interface
+- Implementing multiple interfaces
+- Declaring an interface
+
+<h6>Wut even is it</h6>
+
+- An interface defines a contract - NO implementation
+- Classes implementing an interface conform to its contract
+- Classes can implement as many interfaces as it needs to
+
+```
+public class Passenger extends Person implements Comparable<Flight>, Iterable<Person> { } // Comparable is the interface 
+public class CrewMember extends Person { }
+public class Person {
+    private String name;
+}
+```
+
+<h6>Declaring an interface</h6>
+
+- Supports a subset of the features available to the class
+- Methods (name, parameters, return type)
+    - Are implicitly public
+- Constants (typed named values)
+    - Implicitly public, final, static
+- Can be extended
+    - Interfaces can extend interfaces
+
 ---
 
 <h4>To learn more about:</h4>
 - Getters and setters and when they're used
 - Using public vs private
+- What is "the build process"?
 
 <h4>Basic, important points</h4>
 
